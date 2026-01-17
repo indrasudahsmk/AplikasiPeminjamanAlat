@@ -19,6 +19,6 @@ class isAdmin
         if (Auth::user()->role === 'admin') {
             return $next($request);
         }
-        return redirect()->route('/')->with('error', 'Fitur ini khusus Admin');
+        return redirect()->route('dashboard')->with('error', 'Fitur ini khusus Admin');
     }
 }

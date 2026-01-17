@@ -19,6 +19,6 @@ class isPeminjam
         if (Auth::user()->role === 'peminjam') {
             return $next($request);
         }
-        return redirect()->route('/')->with('error', 'Fitur ini khusus Peminjam');
+        return redirect()->route('homepage')->with('error', 'Fitur ini khusus Peminjam');
     }
 }

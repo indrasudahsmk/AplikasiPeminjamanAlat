@@ -19,6 +19,6 @@ class isPetugas
         if(Auth::user()->role === 'petugas'){
             return $next($request);
         }
-        return redirect()->route('/')->with('error','Fitur ini khusus Petugas');
+        return redirect()->route('homepage')->with('error','Fitur ini khusus Petugas');
     }
 }
