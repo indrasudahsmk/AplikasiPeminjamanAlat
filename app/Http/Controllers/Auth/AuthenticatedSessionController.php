@@ -25,8 +25,13 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
+
+        $user = Auth::user();
+
+        if (in_array($user->role, ['admin', 'petugas'])) {
+            return redirect('/dashboard')->with('success', 'Selamat datang ' . Auth::user()->name . '!');;
+        }
 
         return redirect()->intended(route('homepage', absolute: false))->with('success', 'Selamat datang ' . Auth::user()->name . '!');
     }
@@ -42,6 +47,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Berhasil Logout');;
     }
 }
