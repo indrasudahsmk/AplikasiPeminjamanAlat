@@ -15,14 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kategori_id')->constrained('kategori')->cascadeOnDelete();
             $table->string('nama');
-            $table->string('kode_alat')->unique();
             $table->string('kondisi');
             $table->integer('stok')->default(1);
-
-            $table->integer('harga_harian')->default(0);
-            $table->integer('harga_mingguan')->default(0);
-            $table->integer('harga_bulanan')->default(0);
-
             $table->string('lokasi')->nullable();
             $table->text('deskripsi')->nullable();
             $table->timestamps();

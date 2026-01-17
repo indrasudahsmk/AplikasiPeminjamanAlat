@@ -1,0 +1,5 @@
+@extends('layouts-sbadmin2.app')
+
+@section('content')
+    <h1 class="h3 mb-4 text-gray-800">Dashboard petugas</h1>
+@endsection

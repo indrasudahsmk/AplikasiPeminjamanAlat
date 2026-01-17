@@ -16,57 +16,80 @@
         </a>
     </li>
 
-    <hr class="sidebar-divider">
+    @can('isAdmin')
+        <hr class="sidebar-divider">
 
-    <div class="sidebar-heading">MENU ADMIN</div>
+        <div class="sidebar-heading">MENU ADMIN</div>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Components</span>
-        </a>
-        <div id="collapseTwo" class="collapse">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="#">Buttons</a>
-                <a class="collapse-item" href="#">Cards</a>
-            </div>
-        </div>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-user"></i>
+                <span>User</span>
+            </a>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="#">Colors</a>
-                <a class="collapse-item" href="#">Borders</a>
-                <a class="collapse-item" href="#">Animations</a>
-                <a class="collapse-item" href="#">Other</a>
-            </div>
-        </div>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-tools"></i>
+                <span>Alat</span>
+            </a>
+        </li>
 
-    <hr class="sidebar-divider">
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-tags"></i>
+                <span>Kategori</span>
+            </a>
+        </li>
 
-    <div class="sidebar-heading">Addons</div>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-arrow-right"></i>
+                <span>Peminjaman</span>
+            </a>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
-        </a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-arrow-left"></i>
+                <span>Pengembalian</span>
+            </a>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span>
-        </a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Log Aktivitas</span>
+            </a>
+        </li>
+    @endcan
+
+    @can('isPetugas')
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">MENU PETUGAS</div>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-arrow-right"></i>
+                <span>Peminjaman</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-arrow-left"></i>
+                <span>Pengembalian</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-print"></i>
+                <span>Laporan</span>
+            </a>
+        </li>
+    @endcan
 
     <hr class="sidebar-divider d-none d-md-block">
 

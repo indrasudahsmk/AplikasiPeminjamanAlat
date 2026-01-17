@@ -29,11 +29,20 @@ class AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
 
-        if (in_array($user->role, ['admin', 'petugas'])) {
-            return redirect('/dashboard')->with('success', 'Selamat datang ' . Auth::user()->name . '!');;
+        // Redirect berdasarkan role
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard')
+                ->with('success', 'Selamat datang ' . $user->name . '!');
         }
 
-        return redirect()->intended(route('homepage', absolute: false))->with('success', 'Selamat datang ' . Auth::user()->name . '!');
+        if ($user->role === 'petugas') {
+            return redirect()->route('petugas.dashboard')
+                ->with('success', 'Selamat datang ' . $user->name . '!');
+        }
+
+        // User biasa ke homepage
+        return redirect()->intended(route('homepage', absolute: false))
+            ->with('success', 'Selamat datang ' . $user->name . '!');
     }
 
     /**
