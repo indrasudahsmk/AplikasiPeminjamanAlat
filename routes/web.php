@@ -1,7 +1,13 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Models\Pengembalian;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlatController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\PengembalianController;
 
 Route::get('/', function () {
     return view('homepage');
@@ -15,6 +21,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/dashboard/admin', function () {
             return view('admin.dashboard');
         })->name('admin.dashboard');
+
+        Route::resource('/users', UserController::class);
+        Route::resource('/kategori', KategoriController::class);
+        Route::resource('/alat', AlatController::class);
+        Route::resource('/peminjaman', PeminjamanController::class);
+        Route::resource('/pengembalian', PengembalianController::class);
     });
 
     Route::middleware('isPetugas')->group(function () {

@@ -22,7 +22,7 @@
         <div class="sidebar-heading">MENU ADMIN</div>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('users.index') }}">
                 <i class="fas fa-fw fa-user"></i>
                 <span>User</span>
             </a>
